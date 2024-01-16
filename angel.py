@@ -21,4 +21,4 @@ class Angel(Zombie):
 
     def kill(self, zombies): # remove the zombie from the list
         zombies.remove(self)
-        return -ANGEL_PENALITY
+        return -ANGEL_PENALTY

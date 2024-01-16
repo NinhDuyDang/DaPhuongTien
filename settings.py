@@ -27,13 +27,23 @@ ANIMATION_SPEED = 3 # the frame of the zombies will change every X sec
 # difficulty
 GAME_DURATION = 60 # the game will last X sec
 ZOMBIES_SPAWN_TIME = 1
-ZOMBIES_MOVE_SPEED = {"min": 0.5, "max": 2}
-ANGEL_PENALITY = 1 # will remove X of the score of the player (if you kills a angel)
+ZOMBIES_MOVE_SPEED = {
+  "min": 0.5,
+  "max": 2
+}
+ANGEL_PENALTY = 1 # will remove X of the score of the player (if you kills a angel)
 
 # colors
-COLORS = {"title": (38, 61, 39), "score": (38, 61, 39), "timer": (38, 61, 39),
-            "buttons": {"default": (56, 67, 209), "second":  (87, 99, 255),
-                        "text": (255, 255, 255), "shadow": (46, 54, 163)}} # second is the color when the mouse is on the button
+COLORS = {
+  "title": (38, 61, 39),
+  "score": (38, 61, 39),
+  "timer": (38, 61, 39),
+  "buttons": {
+    "default": (56, 67, 209),
+    "second":  (87, 99, 255), # second is the color when the mouse is on the button
+    "text": (255, 255, 255), "shadow": (46, 54, 163)
+  }
+}
 
 # sounds / music
 MUSIC_VOLUME = 0.4 # value between 0 and 1

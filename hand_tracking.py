@@ -51,7 +51,8 @@ class HandTracking:
                     hand_landmarks,
                     mp_hands.HAND_CONNECTIONS,
                     mp_drawing_styles.get_default_hand_landmarks_style(),
-                    mp_drawing_styles.get_default_hand_connections_style())
+                    mp_drawing_styles.get_default_hand_connections_style()
+                )
         return image
 
     def get_hand_center(self):

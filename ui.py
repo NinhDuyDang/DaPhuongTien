@@ -1,8 +1,17 @@
 import pygame
 from settings import *
 
-def draw_text(surface, text, pos, color, font=FONTS["medium"], pos_mode="top_left",
-                shadow=False, shadow_color=(0,0,0), shadow_offset=2):
+def draw_text(
+        surface,
+        text,
+        pos,
+        color,
+        font=FONTS["medium"],
+        pos_mode="top_left",
+        shadow=False,
+        shadow_color=(0,0,0),
+        shadow_offset=2
+    ):
     label = font.render(text, 1, color)
     label_rect = label.get_rect()
     if pos_mode == "top_left":
@@ -32,8 +41,15 @@ def button(surface, pos_y, text=None, click_sound=None):
     pygame.draw.rect(surface, color, rect) # draw the rectangle
     # draw the text
     if text is not None:
-        draw_text(surface, text, rect.center, COLORS["buttons"]["text"], pos_mode="center",
-                    shadow=True, shadow_color=COLORS["buttons"]["shadow"])
+        draw_text(
+            surface,
+            text,
+            rect.center,
+            COLORS["buttons"]["text"],
+            pos_mode="center",
+            shadow=True,
+            shadow_color=COLORS["buttons"]["shadow"]
+        )
 
     if on_button and pygame.mouse.get_pressed()[0]: # if the user press on the button
         if click_sound is not None: # play the sound if needed
