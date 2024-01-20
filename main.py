@@ -5,9 +5,7 @@ import os
 from settings import *
 from game import Game
 from menu import Menu
-
-
-
+import state_value
 
 # Setup pygame/window --------------------------------------------- #
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (100,32) # windows position
@@ -31,44 +29,44 @@ state = "menu"
 game = Game(SCREEN)
 menu = Menu(SCREEN)
 
-
-
 # Functions ------------------------------------------------------ #
 def user_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+            quit_game()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                sys.exit()
-
+                quit_game()
 
 def update():
     global state
-    if state == "menu":
-        if menu.update() == "game":
-            game.reset() # reset the game to start a new game
-            state = "game"
-    elif state == "game":
-        if game.update() == "menu":
-            state = "menu"
+    if state == state_value.menu:
+        if menu.update() == state_value.game:
+            start_game()
+        if menu.update() == state_value.quit_game:
+            quit_game()
+    elif state == state_value.game:
+        if game.update() == state_value.quit_game:
+            quit_game()
     pygame.display.update()
     mainClock.tick(FPS)
 
+def start_game():
+    global state
+    game.start() # reset the game to start a new game
+    state = state_value.game
 
+def quit_game():
+    pygame.quit()
+    sys.exit()
 
 # Loop ------------------------------------------------------------ #
 while True:
-
     # Buttons ----------------------------------------------------- #
     user_events()
-
     # Update ------------------------------------------------------ #
     update()
-
     # FPS
     if DRAW_FPS:
         fps_label = fps_font.render(f"FPS: {int(mainClock.get_fps())}", 1, (255,200,20))

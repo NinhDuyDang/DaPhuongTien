@@ -3,7 +3,7 @@ import image
 from settings import *
 
 class Background:
-    def __init__(self):
+    def __init__(self, level):
         """
         Initialize the Background object.
 
@@ -15,8 +15,9 @@ class Background:
         Returns:
         None
         """
+        background_number = level if level <= 7 else level % 7
         self.image = image.load(
-            "Assets/background.jpg",
+            f"Assets/background/background{background_number}.jpg",
             size=(SCREEN_WIDTH, SCREEN_HEIGHT),
             convert="default"
         )
