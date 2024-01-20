@@ -25,8 +25,6 @@ def draw_text(
 
     surface.blit(label, label_rect) # draw the text
 
-
-
 def button(surface, pos_y, text=None, click_sound=None):
     rect = pygame.Rect((SCREEN_WIDTH//2 - BUTTONS_SIZES[0]//2, pos_y), BUTTONS_SIZES)
 

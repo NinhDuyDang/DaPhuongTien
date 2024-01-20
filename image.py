@@ -14,15 +14,12 @@ def load(img_path, size="default", convert="alpha", flip=False):
 
     return img
 
-
 def scale(img, size):
     return pygame.transform.smoothscale(img, size)
-
 
 def draw(surface, img, pos, pos_mode="top_left"):
     if pos_mode == "center":
         pos = list(pos)
         pos[0] -= img.get_width()//2
         pos[1] -= img.get_height()//2
-
     surface.blit(img, pos)
