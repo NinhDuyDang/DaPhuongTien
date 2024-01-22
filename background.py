@@ -1,9 +1,9 @@
-import pygame
 import image
 from settings import *
+import background_type
 
 class Background:
-    def __init__(self, level):
+    def __init__(self, level, type: background_type):
         """
         Initialize the Background object.
 
@@ -15,12 +15,19 @@ class Background:
         Returns:
         None
         """
-        background_number = level if level <= 7 else level % 7
-        self.image = image.load(
-            f"Assets/background/background{background_number}.jpg",
-            size=(SCREEN_WIDTH, SCREEN_HEIGHT),
-            convert="default"
-        )
+        if (type == background_type.game):
+            background_number = level if level <= 7 else level % 7
+            self.image = image.load(
+                f"Assets/background/background{background_number}.jpg",
+                size=(SCREEN_WIDTH, SCREEN_HEIGHT),
+                convert="default"
+            )
+        elif (type == background_type.instruction):
+            self.image = image.load(
+                f"Assets/background/instruction_background.jpg",
+                size=(SCREEN_WIDTH, SCREEN_HEIGHT),
+                convert="default"
+            )
 
 
     def draw(self, surface):
