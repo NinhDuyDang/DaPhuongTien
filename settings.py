@@ -32,6 +32,8 @@ ZOMBIES_MOVE_SPEED = {
 }
 ANGEL_PENALTY = 1 # will remove X of the score of the player (if you kills a angel)
 
+BOOM_BONUS = 5
+
 # colors
 COLORS = {
   "title": (38, 61, 39),
@@ -41,12 +43,13 @@ COLORS = {
     "default": (56, 67, 209),
     "second":  (87, 99, 255), # second is the color when the mouse is on the button
     "text": (255, 255, 255), "shadow": (46, 54, 163)
-  }
+  },
+  "instruction": (255, 255, 255)
 }
 
 # sounds / music
-MUSIC_VOLUME = 0.4 # value between 0 and 1
-SOUNDS_VOLUME = 5
+MUSIC_VOLUME = 0 # value between 0 and 1
+SOUNDS_VOLUME = 0 # value between 0 and 1
 
 # fonts
 pygame.font.init()

@@ -6,6 +6,7 @@ from settings import *
 from game import Game
 from menu import Menu
 import state_value
+from instruction import Instruction
 
 # Setup pygame/window --------------------------------------------- #
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (100,32) # windows position
@@ -28,6 +29,7 @@ state = "menu"
 # Creation -------------------------------------------------------- #
 game = Game(SCREEN)
 menu = Menu(SCREEN)
+instruction = Instruction(SCREEN)
 
 # Functions ------------------------------------------------------ #
 def user_events():
@@ -46,9 +48,14 @@ def update():
             start_game()
         if menu.update() == state_value.quit_game:
             quit_game()
+        if menu.update() == state_value.instruction:
+            show_instruction()
     elif state == state_value.game:
         if game.update() == state_value.quit_game:
             quit_game()
+    elif state == state_value.instruction:
+        if instruction.update() == state_value.menu:
+            state = state_value.menu
     pygame.display.update()
     mainClock.tick(FPS)
 
@@ -60,6 +67,11 @@ def start_game():
 def quit_game():
     pygame.quit()
     sys.exit()
+
+def show_instruction():
+    global state
+    state = state_value.instruction
+    instruction.update()
 
 # Loop ------------------------------------------------------------ #
 while True:

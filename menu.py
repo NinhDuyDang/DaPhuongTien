@@ -1,14 +1,14 @@
 import pygame
-import sys
 from settings import *
 from background import Background
 import ui
 import state_value
+import background_type
 
 class Menu:
     def __init__(self, surface):
         self.surface = surface
-        self.background = Background(1)
+        self.background = Background(1, background_type.game)
         self.click_sound = pygame.mixer.Sound(f"Assets/Sounds/slap.wav")
 
     def draw(self):
@@ -27,8 +27,11 @@ class Menu:
 
     def update(self):
         self.draw()
-        if ui.button(self.surface, 320, "START", click_sound=self.click_sound):
+        if ui.button(self.surface, 220, "START", click_sound=self.click_sound):
             return state_value.game
 
-        if ui.button(self.surface, 320+BUTTONS_SIZES[1]*1.5, "Quit", click_sound=self.click_sound):
+        if ui.button(self.surface, 220+BUTTONS_SIZES[1]*1.5, "Quit", click_sound=self.click_sound):
             return state_value.quit_game
+        
+        if ui.button(self.surface, 220+BUTTONS_SIZES[1]*3, "Instruction", click_sound=self.click_sound):
+            return state_value.instruction

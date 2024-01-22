@@ -1,6 +1,7 @@
 import pygame
 import time
 import random
+from boom import Boom
 from settings import *
 from background import Background
 from hand import Hand
@@ -10,11 +11,12 @@ from angel import Angel
 import cv2
 import ui
 import state_value
+import background_type
 
 class Game:
     def __init__(self, surface):
         self.surface = surface
-        self.background = Background(1)
+        self.background = Background(1, background_type.game)
 
         # Load camera
         self.cap = cv2.VideoCapture(0)
@@ -41,18 +43,20 @@ class Game:
         self.animators = []
         self.animators_spawn_timer = 0
         self.game_start_time = time.time()
-        self.background = Background(self.level)
+        self.background = Background(self.level, background_type.game)
 
 
     def spawn_animators(self):
         t = time.time()
         if t > self.animators_spawn_timer:
-            self.insects_spawn_timer = t + ZOMBIES_SPAWN_TIME
+            # self.insects_spawn_timer = t + ZOMBIES_SPAWN_TIME
 
             # increase the probability that the animation will be a angel or a zombie over time
             nb = (GAME_DURATION-self.time_left)/GAME_DURATION * 100  /50  # increase from 0 to 50 during all  the game (linear)
             if random.randint(0, 20) < nb:
                 self.animators.append(Angel(self.level))
+            elif random.randint(20, 30) < nb:
+                self.animators.append(Boom())
             else:
                 self.animators.append(Zombie(self.level))
 
@@ -148,11 +152,10 @@ class Game:
                     self.level += 1
                     nextGoal = 100 * self.level * 2
                     bonusPoint = self.score - self.goal
-                    self.score = bonusPoint
-                    if (self.score >= nextGoal) :
-                        self.goal = nextGoal * 2
-                    else:
-                        self.goal = nextGoal
+                    while (bonusPoint >= nextGoal):
+                        nextGoal *= 2
+                    self.goal = nextGoal
+                    self.score = int(bonusPoint / 3)
                     self.reset()
                 else:
                     self.score = 0
