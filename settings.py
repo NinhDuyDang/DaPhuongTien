@@ -3,6 +3,8 @@ import pygame
 WINDOW_NAME = "Nhom Da Phuong Tien "
 GAME_TITLE = WINDOW_NAME
 
+INSTRUCTION_HEAD ="Instructions for playing the game"
+
 SCREEN_WIDTH, SCREEN_HEIGHT = 1200, 700
 
 FPS = 90

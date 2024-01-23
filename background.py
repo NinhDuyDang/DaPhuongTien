@@ -22,13 +22,16 @@ class Background:
                 size=(SCREEN_WIDTH, SCREEN_HEIGHT),
                 convert="default"
             )
+
         elif (type == background_type.instruction):
             self.image = image.load(
                 f"Assets/background/instruction_background.jpg",
                 size=(SCREEN_WIDTH, SCREEN_HEIGHT),
                 convert="default"
-            )
+                
+           
 
+            )
 
     def draw(self, surface):
         """
