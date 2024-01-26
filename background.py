@@ -29,8 +29,6 @@ class Background:
                 size=(SCREEN_WIDTH, SCREEN_HEIGHT),
                 convert="default"
                 
-           
-
             )
 
     def draw(self, surface):

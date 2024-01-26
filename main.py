@@ -54,7 +54,7 @@ def update():
         if game.update() == state_value.quit_game:
             quit_game()
     elif state == state_value.instruction:
-        if instruction.update() == state_value.menu:
+        if instruction.update() == state_value.menu:    
             state = state_value.menu
     pygame.display.update()
     mainClock.tick(FPS)
