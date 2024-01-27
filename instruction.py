@@ -17,7 +17,7 @@ class Instruction:
       self.surface,
       INSTRUCTION_HEAD,
       (SCREEN_WIDTH//2, 120),
-      COLORS["title"],
+      COLORS["instruction"],
       font=FONTS["big"],
       shadow=True,
       shadow_color=(255,255,255),
@@ -29,20 +29,18 @@ class Instruction:
       CONTENT1,
       (SCREEN_WIDTH//2, 210),
       COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
+      font=FONTS["big"],
+      shadow=True,
       shadow_color=(255,255,255),
       pos_mode="center"
     )
-
-
     ui.draw_text(
       self.surface,
       CONTENT2,
       (SCREEN_WIDTH//2, 300),
       COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
+      font=FONTS["big"],
+      shadow=True,
       shadow_color=(255,255,255),
       pos_mode="center"
     )
@@ -51,8 +49,8 @@ class Instruction:
       CONTENT3,
       (SCREEN_WIDTH//2, 390),
       COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
+      font=FONTS["big"],
+      shadow=True,
       shadow_color=(255,255,255),
       pos_mode="center"
     )
@@ -61,18 +59,8 @@ class Instruction:
       CONTENT4,
       (SCREEN_WIDTH//2, 480),
       COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
-      shadow_color=(255,255,255),
-      pos_mode="center"
-    )
-    ui.draw_text(
-      self.surface,
-      CONTENT5,
-      (SCREEN_WIDTH//2, 570),
-      COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
+      font=FONTS["big"],
+      shadow=True,
       shadow_color=(255,255,255),
       pos_mode="center"
     )
@@ -81,8 +69,8 @@ class Instruction:
       CONTENT6,
       (SCREEN_WIDTH//2, 660),
       COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
+      font=FONTS["big"],
+      shadow=True,
       shadow_color=(255,255,255),
       pos_mode="center"
     )
@@ -91,12 +79,11 @@ class Instruction:
       CONTENT7,
       (SCREEN_WIDTH//2, 750),
       COLORS["instruction"],
-      font=FONTS["medium"],
-      shadow=False,
+      font=FONTS["big"],
+      shadow=True,
       shadow_color=(255,255,255),
       pos_mode="center"
     )
-    
 
   def update(self):
     self.draw()
