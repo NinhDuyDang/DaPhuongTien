@@ -10,7 +10,8 @@ CONTENT3 ="Each time the player successfully catch zombie, the score increases 1
 CONTENT4 ="Each time the player successfully catch angel, the score decreases 1 value"
 CONTENT5 ="Each time the player successfully catch boom, the score increases 5 value"
 CONTENT6 ="Each time the player reach the level's goal score, they game move to a next level"
-CONTENT7="The number of extra points for the next game will be calculated by dividing the number of points exceeding the target in the previous game by 3"
+CONTENT7 ="The number of extra points for the next game will be calculated by dividing "
+CONTENT8 = "The number of points exceeding the target in the previous game by 3"
 
 # Người chơi sử dụng cử chỉ của tay để tương tác với các đối tượng trên màn hình.
 # Khi tay đóng (hand_tracking.hand_closed), người chơi có thể "vỗ" hoặc thực hiện hành động tương tự để tương tác với các đối tượng trên màn hình.
