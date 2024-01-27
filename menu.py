@@ -29,9 +29,9 @@ class Menu:
         self.draw()
         if ui.button(self.surface, 220, "START", click_sound=self.click_sound):
             return state_value.game
-
-        if ui.button(self.surface, 220+BUTTONS_SIZES[1]*1.5, "Quit", click_sound=self.click_sound):
-            return state_value.quit_game
         
-        if ui.button(self.surface, 220+BUTTONS_SIZES[1]*3, "Instruction", click_sound=self.click_sound):
+        if ui.button(self.surface, 220+BUTTONS_SIZES[1]*1.5, "Instruction", click_sound=self.click_sound):
             return state_value.instruction
+
+        if ui.button(self.surface, 220+BUTTONS_SIZES[1]*3, "Quit", click_sound=self.click_sound):
+            return state_value.quit_game

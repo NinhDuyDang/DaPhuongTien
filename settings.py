@@ -4,13 +4,13 @@ WINDOW_NAME = "Nhom Da Phuong Tien "
 GAME_TITLE = WINDOW_NAME
 
 INSTRUCTION_HEAD ="Instructions for playing the game"
-CONTENT1 =" Players use hand gestures to interact with on-screen objects"
-CONTENT2 ="When hands are closed (hand_tracking.hand_closed)" 
-CONTENT3 ="the player can tap or perform"
-CONTENT4="similar actions to interact with on-screen objects."
-CONTENT5 ="Each time the player successfully interacts with an object (zombie, angel), the score increases"
-CONTENT6 ="Each time the player surpasses a level's score goal, they move up to a new level"
-CONTENT7="The new level's target score is calculated according to the formula goal = 100 * level * 2."
+CONTENT1 ="Players use hand gestures to interact with the screen."
+CONTENT2 ="When hands are closed it is counted as catching objects" 
+CONTENT3 ="Each time the player successfully catch zombie, the score increases 1 value"
+CONTENT4 ="Each time the player successfully catch angel, the score decreases 1 value"
+CONTENT5 ="Each time the player successfully catch boom, the score increases 5 value"
+CONTENT6 ="Each time the player reach the level's goal score, they game move to a next level"
+CONTENT7="The number of extra points for the next game will be calculated by dividing the number of points exceeding the target in the previous game by 3"
 
 # Người chơi sử dụng cử chỉ của tay để tương tác với các đối tượng trên màn hình.
 # Khi tay đóng (hand_tracking.hand_closed), người chơi có thể "vỗ" hoặc thực hiện hành động tương tự để tương tác với các đối tượng trên màn hình.
@@ -23,7 +23,7 @@ CONTENT7="The new level's target score is calculated according to the formula go
 # Mỗi khi người chơi vượt qua mục tiêu điểm của một cấp độ, họ chuyển lên cấp độ mới.
 # Mục tiêu điểm của cấp độ mới được tính toán theo công thức goal = 100 * level * 2.
 
-SCREEN_WIDTH, SCREEN_HEIGHT = 1890, 1100
+SCREEN_WIDTH, SCREEN_HEIGHT = 1200, 700
 
 FPS = 90
 DRAW_FPS = True
@@ -68,8 +68,8 @@ COLORS = {
 }
 
 # sounds / music
-MUSIC_VOLUME = 0 # value between 0 and 1
-SOUNDS_VOLUME = 0 # value between 0 and 1
+MUSIC_VOLUME = 0.3 # value between 0 and 1
+SOUNDS_VOLUME = 0.3 # value between 0 and 1
 
 # fonts
 pygame.font.init()

@@ -163,6 +163,13 @@ class Game:
             elif ui.button(
                 self.surface,
                 320+BUTTONS_SIZES[1]*1.5,
+                "Back",
+                click_sound=self.sounds["slap"]
+            ):
+                return state_value.menu
+            elif ui.button(
+                self.surface,
+                320+BUTTONS_SIZES[1]*3,
                 "Quit",
                 click_sound=self.sounds["slap"]
             ):

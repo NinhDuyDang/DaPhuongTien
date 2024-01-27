@@ -53,6 +53,8 @@ def update():
     elif state == state_value.game:
         if game.update() == state_value.quit_game:
             quit_game()
+        if game.update() == state_value.menu:
+            state = state_value.menu
     elif state == state_value.instruction:
         if instruction.update() == state_value.menu:    
             state = state_value.menu
