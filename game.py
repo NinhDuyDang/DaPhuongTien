@@ -49,13 +49,13 @@ class Game:
     def spawn_animators(self):
         t = time.time()
         if t > self.animators_spawn_timer:
-            # self.insects_spawn_timer = t + ZOMBIES_SPAWN_TIME
+            self.insects_spawn_timer = t + ZOMBIES_SPAWN_TIME
 
             # increase the probability that the animation will be a angel or a zombie over time
             nb = (GAME_DURATION-self.time_left)/GAME_DURATION * 100  /50  # increase from 0 to 50 during all  the game (linear)
             if random.randint(0, 20) < nb:
                 self.animators.append(Angel(self.level))
-            elif random.randint(20, 30) < nb:
+            elif random.randint(0, 5) < nb:
                 self.animators.append(Boom())
             else:
                 self.animators.append(Zombie(self.level))
