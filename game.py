@@ -66,6 +66,12 @@ class Game:
             # self.insects_spawn_timer = t + ZOMBIES_SPAWN_TIME
 
             # increase the probability that the animation will be a angel or a zombie over time
+            """
+            GAME_DURATION-self.time_left calculates the amount of time that has passed since the game started.
+            (GAME_DURATION-self.time_left)/GAME_DURATION converts this into a fraction of the total game duration.
+            (GAME_DURATION-self.time_left)/GAME_DURATION * 100 converts this fraction into a percentage.
+            (GAME_DURATION-self.time_left)/GAME_DURATION * 100 /50 divides this percentage by 50
+            """
             nb = (GAME_DURATION-self.time_left)/GAME_DURATION * 100  /50  # increase from 0 to 50 during all  the game (linear)
             if random.randint(0, 20) < nb:
                 self.animators.append(Angel(self.level))
