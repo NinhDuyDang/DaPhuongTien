@@ -47,6 +47,20 @@ class Game:
 
 
     def spawn_animators(self):
+        """
+        Spawns animators based on certain conditions and adds them to the animators list.
+
+        Conditions:
+        - The current time should be greater than the animators_spawn_timer.
+        - The probability of spawning an Angel or a Zombie increases over time.
+        - If a random number between 0 and 20 is less than the calculated probability, an Angel is spawned.
+        - If a random number between 0 and 5 is less than the calculated probability, a Boom animator is spawned.
+        - Otherwise, a Zombie is spawned.
+        - If the time left is less than half of the game duration, an additional Zombie is spawned.
+
+        Parameters:
+        - self: The instance of the Game class.
+        """
         t = time.time()
         if t > self.animators_spawn_timer:
             # self.insects_spawn_timer = t + ZOMBIES_SPAWN_TIME

@@ -69,8 +69,8 @@ COLORS = {
 }
 
 # sounds / music
-MUSIC_VOLUME = 0.3 # value between 0 and 1
-SOUNDS_VOLUME = 0.3 # value between 0 and 1
+MUSIC_VOLUME = 0 # value between 0 and 1
+SOUNDS_VOLUME = 0 # value between 0 and 1
 
 # fonts
 pygame.font.init()

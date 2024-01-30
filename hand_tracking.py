@@ -8,6 +8,9 @@ mp_hands = mp.solutions.hands
 
 class HandTracking:
     def __init__(self):
+        """
+        Initializes the HandTracking class.
+        """
         self.hand_tracking = mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
         self.hand_x = 0
         self.hand_y = 0
@@ -16,6 +19,15 @@ class HandTracking:
 
 
     def scan_hands(self, image):
+        """
+        Scans the given image for hands and returns the annotated image with hand landmarks.
+
+        Parameters:
+        image (numpy.ndarray): The input image to scan for hands.
+
+        Returns:
+        numpy.ndarray: The annotated image with hand landmarks.
+        """
         rows, cols, _ = image.shape
 
         # Flip the image horizontally for a later selfie-view display, and convert
@@ -61,8 +73,8 @@ class HandTracking:
         cv2.imshow("image", self.image)
         cv2.waitKey(1)
 
-    def is_hand_closed(self):
+    # def is_hand_closed(self):
 
-        pass
+    #     pass
 
 

@@ -33,6 +33,14 @@ instruction = Instruction(SCREEN)
 
 # Functions ------------------------------------------------------ #
 def user_events():
+    """
+    Process user events such as quitting the game or pressing the escape key.
+
+    This function iterates over the events in the Pygame event queue and handles
+    specific events such as quitting the game when the window is closed or
+    pressing the escape key to quit the game.
+
+    """
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit_game()
@@ -42,6 +50,15 @@ def user_events():
                 quit_game()
 
 def update():
+    """
+    Updates the game state based on the current state value.
+
+    If the current state is 'menu', it checks for menu updates and performs corresponding actions.
+    If the current state is 'game', it checks for game updates and performs corresponding actions.
+    If the current state is 'instruction', it checks for instruction updates and performs corresponding actions.
+
+    The function also updates the display and controls the frame rate.
+    """
     global state
     if state == state_value.menu:
         if menu.update() == state_value.game:

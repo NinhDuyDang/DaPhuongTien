@@ -1,6 +1,18 @@
 import pygame
 
 def load(img_path, size="default", convert="alpha", flip=False):
+    """
+    Load an image from the given file path and perform optional transformations.
+
+    Args:
+        img_path (str): The path to the image file.
+        size (str, optional): The size of the image. Defaults to "default".
+        convert (str, optional): The conversion mode for the image. Defaults to "alpha".
+        flip (bool, optional): Whether to flip the image horizontally. Defaults to False.
+
+    Returns:
+        pygame.Surface: The loaded and transformed image.
+    """
     if convert == "alpha":
         img = pygame.image.load(img_path).convert_alpha()
     else:

@@ -4,6 +4,7 @@ import image
 from settings import *
 from zombie import Zombie
 
+# Inheritance from Zombie
 class Angel(Zombie):
     def __init__(self, level):
         #size

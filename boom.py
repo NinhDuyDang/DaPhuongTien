@@ -3,6 +3,7 @@ from settings import *
 from zombie import Zombie
 import image
 
+# Inheritance from Zombie
 class Boom(Zombie):
   def __init__(self):
     random_size_value = random.uniform(ZOMBIE_SIZE_RANDOMIZE[0], ZOMBIE_SIZE_RANDOMIZE[1])

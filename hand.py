@@ -6,6 +6,9 @@ import cv2
 
 class Hand:
     def __init__(self):
+        """
+        Initializes the Hand object.
+        """
         self.orig_image = image.load("Assets/hand.png", size=(HAND_SIZE, HAND_SIZE))
         self.image = self.orig_image.copy()
         self.image_smaller = image.load("Assets/hand.png", size=(HAND_SIZE - 50, HAND_SIZE - 50))
@@ -13,12 +16,12 @@ class Hand:
         self.left_click = False
         #self.hand_tracking = HandTracking()
 
-    def follow_mouse(self): # change the hand pos center at the mouse pos
-        self.rect.center = pygame.mouse.get_pos()
-        # self.hand_tracking.display_hand()
+    # def follow_mouse(self): # change the hand pos center at the mouse pos
+    #     self.rect.center = pygame.mouse.get_pos()
+    #     # self.hand_tracking.display_hand()
 
-    def follow_mediapipe_hand(self, x, y):
-        self.rect.center = (x, y)
+    # def follow_mediapipe_hand(self, x, y):
+    #     self.rect.center = (x, y)
 
     def draw_hitbox(self, surface):
         pygame.draw.rect(surface, (200, 60, 0), self.rect)
