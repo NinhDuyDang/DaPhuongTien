@@ -15,7 +15,7 @@ class Angel(Zombie):
         # sprite
         self.rect = pygame.Rect(start_pos[0], start_pos[1], size[0]//1.4, size[1]//1.4)
         # self.images = [image.load(f"Assets/angel/{nb}.png", size=size, flip=moving_direction=="right") for nb in range(1, 7)] # load the ima0ges
-        angel_number = level if level <= 7 else level % 7
+        angel_number = level if level <= 7 else (level % 7) + 1
         self.images = [image.load(f"Assets/angel/angel{angel_number}.png", size=size, flip=moving_direction=="right")] # load the image
         self.current_frame = 0
         self.animation_timer = 0

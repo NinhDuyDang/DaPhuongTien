@@ -16,7 +16,7 @@ class Background:
         None
         """
         if (type == background_type.game):
-            background_number = level if level <= 7 else level % 7
+            background_number = level if level <= 7 else (level % 7) + 1
             self.image = image.load(
                 f"Assets/background/background{background_number}.jpg",
                 size=(SCREEN_WIDTH, SCREEN_HEIGHT),
