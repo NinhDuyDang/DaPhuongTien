@@ -20,7 +20,7 @@ mainClock = pygame.time.Clock()
 fps_font = pygame.font.SysFont("coopbl", 22)
 
 # Music ----------------------------------------------------------- #
-pygame.mixer.music.load("Assets/Sounds/Summertime-background-music.mp3")
+pygame.mixer.music.load("Assets/Sounds/y2mate.com - Shiverr  Whize  Nhạc nền kinh dị gây ám ảnh Tiktok.mp3")
 pygame.mixer.music.set_volume(MUSIC_VOLUME)
 pygame.mixer.music.play(-1)
 # Variables ------------------------------------------------------- #
